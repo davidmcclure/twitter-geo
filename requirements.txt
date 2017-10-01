@@ -1,0 +1,11 @@
+
+ipython
+jupyter
+invoke
+scandir
+ujson
+numpy
+scipy
+matplotlib
+pandas
+SQLAlchemy
