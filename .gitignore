@@ -97,9 +97,7 @@ ENV/
 /site
 
 # lint
-*.csv
-*.json
-*.tar.gz
+/data
 *.db
 *.db-journal
 cache*
