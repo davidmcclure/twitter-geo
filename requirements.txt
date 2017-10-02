@@ -9,3 +9,8 @@ scipy
 matplotlib
 pandas
 SQLAlchemy
+click
+attrs
+wordfreq
+gensim
+pandas
