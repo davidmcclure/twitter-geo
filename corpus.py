@@ -5,6 +5,7 @@ import re
 import attr
 
 from gensim.models.word2vec import Word2Vec
+from collections import Counter
 
 from utils import scan_paths
 
@@ -37,14 +38,26 @@ class Corpus:
 
             text = re.sub(r"http\S+", "", tweet['text'])
 
-            yield re.findall('[a-z0-9#@]+', text)
+            yield re.findall('[a-z0-9#@]+', text.lower())
 
-    def word2vec_model(self, state):
-        """Train a model for a state.
+    def word2vec_model(self, key):
+        """Train a model for a key.
         """
-        sents = list(self.sentences(state))
+        sents = list(self.sentences(key))
 
         return Word2Vec(sents, size=100, min_count=10, workers=8)
+
+    def word_counts(self, key):
+        """Get raw word counts for a key.
+        """
+        sents = list(self.sentences(key))
+
+        counts = Counter()
+        for sent in sents:
+            for word in sent:
+                counts[word] += 1
+
+        return counts
 
 
 class StateCorpus(Corpus):
