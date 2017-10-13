@@ -2,8 +2,8 @@
 
 from invoke import task
 
-from .db import engine
-from .models import Base, StateCount
+from twitter_geo.state_word_counts.db import engine
+from twitter_geo.state_word_counts.models import Base, StateCount
 
 
 @task
@@ -18,4 +18,4 @@ def reset_db(ctx):
 def index_db(ctx):
     """Create indexes on bin counts database.
     """
-    MinuteCount.add_indexes()
+    StateCount.add_indexes()
