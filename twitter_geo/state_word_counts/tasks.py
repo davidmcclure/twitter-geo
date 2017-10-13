@@ -15,6 +15,13 @@ def reset_db(ctx):
 
 
 @task
+def load_db(ctx, path):
+    """Load database.
+    """
+    StateCount.load(path)
+
+
+@task
 def index_db(ctx):
     """Create indexes on bin counts database.
     """
