@@ -1,18 +1,13 @@
 
 ipython
 jupyter
-invoke
-scandir
 ujson
 numpy
 scipy
 matplotlib
 pandas
 SQLAlchemy
-SQLAlchemy-Wrapper
 click
-attrs
 wordfreq
-gensim
 pandas
 sklearn

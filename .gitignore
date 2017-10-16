@@ -100,5 +100,4 @@ ENV/
 /data
 
 *.db
-*.db-journal
 cache*
