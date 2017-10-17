@@ -10,3 +10,4 @@ click
 wordfreq
 pandas
 wordcloud
+us
