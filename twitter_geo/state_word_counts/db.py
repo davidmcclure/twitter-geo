@@ -73,6 +73,18 @@ class StateWordCount(Base):
             .scalar()
 
     @classmethod
+    def state_counts(cls):
+        """Get all state -> count pairs.
+
+        Returns: int
+        """
+        query = session \
+            .query(cls.key, func.sum(cls.count)) \
+            .group_by(cls.key)
+
+        return OrderedDict(query.all())
+
+    @classmethod
     def state_token_count(cls, state, token):
         """Get a token / state count.
 
@@ -82,15 +94,6 @@ class StateWordCount(Base):
             .query(cls.count) \
             .filter(cls.key==state, cls.token==token) \
             .scalar()
-
-    @classmethod
-    def state_token_rel_count(cls, state, token):
-        """Get a relative token / state count.
-
-        Returns: int
-        """
-        return cls.state_token_count(state, token) / \
-            cls.state_count(state)
 
 
 @click.group()
