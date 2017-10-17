@@ -5,9 +5,8 @@ ujson
 numpy
 scipy
 matplotlib
-pandas
 SQLAlchemy
 click
 wordfreq
 pandas
-sklearn
+wordcloud
