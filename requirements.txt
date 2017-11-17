@@ -11,3 +11,4 @@ wordfreq
 pandas
 wordcloud
 us
+tqdm
